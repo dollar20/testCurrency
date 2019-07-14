@@ -1,0 +1,7 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+RewriteRule ^currency/list/$   RestController.php?view=all [nc,qsa]
+RewriteRule ^currency/(R[0-9]+)/(\d{4}-\d{2}-\d{2})/(\d{4}-\d{2}-\d{2})$   RestController.php?view=single&ValuteID=$1&DateFrom=$2&DateTo=$3 [nc,qsa]
